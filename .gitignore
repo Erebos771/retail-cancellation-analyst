@@ -1,0 +1,12 @@
+.env
+.env.*
+.Rhistory
+.venv/
+__pycache__/
+node_modules/
+*.pem
+*.key
+*.xlsx
+*.zip
+*.log
+*.tmp

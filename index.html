@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ledger / Cancellation review</title>
+  <link rel="stylesheet" href="src/style.css">
+  <script defer src="data/retail.js"></script>
+  <script defer src="src/analyst.js"></script>
+  <script defer src="src/conversation.js"></script>
+  <script defer src="src/view.js"></script>
+</head>
+<body>
+<header><strong>◧ Ledger</strong><span>Retail operations</span></header>
+<main>
+  <div class="eyebrow">OPERATIONS BRIEF &nbsp; / &nbsp; DEC 2010 — DEC 2011</div>
+  <h1>Cancellation review</h1>
+  <p class="intro">Which product should operations investigate first?</p>
+  <section class="metrics" aria-label="Full-period merchandise totals">
+    <article><h2>Cancelled value</h2><b id="value"></b></article>
+    <article><h2>Cancelled units</h2><b id="units"></b></article>
+    <article><h2>Unit cancellation rate</h2><b id="rate"></b></article>
+  </section>
+  <div class="columns">
+    <section><h2>Investigation queue</h2>
+      <label for="ranking">Rank products by</label>
+      <select id="ranking">
+        <option value="value">Cancelled value</option><option value="rate">Unit cancellation rate</option>
+        <option value="units">Cancelled units</option><option value="sold">Units sold</option>
+        <option value="largest">Largest credit line</option>
+      </select>
+      <p id="scope" class="note"></p>
+      <div class="scroll"><table><thead><tr><th>Product</th><th id="metric-heading">Cancelled value</th><th>Unit rate</th></tr></thead><tbody id="rows"></tbody></table></div>
+    </section>
+    <aside><div class="eyebrow">LOCAL AI ANALYST</div><h2>Ask the analyst</h2>
+      <label for="question">Ask about the full reporting period</label>
+      <form id="ask"><textarea id="question" required maxlength="240" rows="3">Which product should we investigate first?</textarea>
+      <button>Ask analyst ↗</button></form>
+      <label for="category">Question category</label>
+      <select id="category"></select>
+      <div class="suggestions" id="suggestions"></div>
+      <p id="answer" role="status"></p>
+    </aside>
+  </div>
+  <details><summary>Data and methodology</summary><p id="audit"></p>
+    <p>Unit rate divides credited units by gross units sold during the period. Credits can relate to earlier sales. Rate rankings require 100 units sold. Value rankings include all qualifying credits. Ties use ascending stock code.</p>
+    <p>Source: Daqing Chen, Online Retail, UCI Machine Learning Repository (2015), CC BY 4.0. Aggregated merchandise lines, 1 December 2010 through 9 December 2011.</p></details>
+</main></body></html>
+
